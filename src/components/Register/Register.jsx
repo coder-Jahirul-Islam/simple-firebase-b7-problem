@@ -13,7 +13,6 @@ const Register = () => {
   const handleRegister = (event) => {
     event.preventDefault();
 
-    console.log("hell");
     if (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
       console.log("okay tikh ace ");
     } else {
@@ -36,7 +35,7 @@ const Register = () => {
     }
   };
 
-  const handleEmail = () => {};
+  const handleEmail = () => { };
 
   console.log(email, password);
   return (
@@ -59,7 +58,8 @@ const Register = () => {
                   type="email"
                   placeholder="enter your email"
                 />
-                <div className="pass-container">
+                {/* vanga way */}
+                {/* <div className="pass-container">
                   {control ? (
                     <input
                       onChange={(e) => setPassword(e.target.value)}
@@ -76,6 +76,20 @@ const Register = () => {
                       placeholder="enter your password"
                     />
                   )}
+                  <button className="btn btn-primary w-25" onClick={() => setControl(!control)}>toggle</button>
+                </div> */}
+
+                {/* smart way */}
+                <div className="pass-container">
+                  <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="password p-3 m-2"
+                    type={control ? "text" : "password"}
+                    placeholder="enter your password"
+                  />
+
+
+
                   <button className="btn btn-primary w-25" onClick={() => setControl(!control)}>toggle</button>
                 </div>
                 <button
